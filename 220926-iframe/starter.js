@@ -10,6 +10,7 @@
   iframe.scrolling = "no";
   iframe.marginWidth = 0;
   iframe.marginHeight = 0;
+  iframe.sandbox="allow-top-navigation";
 
   const src = "https://geerpm.github.io/220926-iframe/";
   iframe.src = src;

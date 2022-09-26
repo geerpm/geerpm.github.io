@@ -16,4 +16,6 @@
   iframe.src = src;
 
   target.appendChild(iframe);
+  
+  console.log(document.referrer);
 })();

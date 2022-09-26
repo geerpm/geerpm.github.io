@@ -18,4 +18,5 @@
   target.appendChild(iframe);
   
   console.log(document.referrer);
+  console.log(`--------`);
 })();

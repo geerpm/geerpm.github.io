@@ -53,13 +53,14 @@ async function embedIfTargetExists() {
     try {
       const res = await fetch(src, {
         method: "GET",
-//         mode: "no-cors",
+        mode: "no-cors",
         headers: {
           ...data
         }
       });
+      const resBlob = await res.blob();
       console.log(`-------    444`);
-      iframe.src = URL.createObjectURL(await res.blob());
+      iframe.src = URL.createObjectURL(resBlob);
       // iframe.src = src;
       targetEl.appendChild(iframe);
     } catch (e) {

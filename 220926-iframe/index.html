@@ -1,19 +1,112 @@
-<body style="background-color: pink">
-  <h1>mock view</h1>
-  
-  <a href="https://google.com" target="_parent">google(parent)</a>
-  /
-  
-  <a href="https://google.com" target="_blank">google(blank)</a>
-  /
-  
-  <a href="https://google.com" target="_top">google(top)</a>
-  
-  /
-  
-  <a href="https://google.com" >google(self)</a>
+
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="noindex">
+  <title>トップページ：ラストゲーム</title>
+  <link rel="stylesheet" href="css/sanitize.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/top.css">
+</head>
+
+<body>
+ 
+  <div class="l-last-game">
+    <div class="l-last-game-container">
+      <div class="c-title">LAST GAME</div>
+      <div class="c-league">
+          MOCK View MOCK View MOCK View MOCK View MOCK View MOCK View MOCK View
+      </div>
+
+      <div class="l-game-info">
+        <div class="l-game-info-own">
+          <div class="c-logo">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <p class="c-logo-text">XOXOXO</p>
+          </div>
+        </div>
+
+        <div class="l-game-info-container">
+          <div class="l-season">
+            <div class="l-season-overview">
+              <div class="c-Round">第2節</div>
+              <div class="c-field c-field--host">HOST</div>
+            </div>
+
+            <div class="l-score">
+              <div class="l-score-overview">
+                <div class="l-score-own">
+                  <div class="c-score-own">999</div>
+                </div>
+                <div class="l-score-detail">
+                  <div class="l-score-detail-own">
+                    <div class="c-score-detail-own">
+                      <span>123</span>
+                      <span>456</span>
+                    </div>
+                  </div>
+                  <div class="l-score-status">
+                    <div class="c-score-status">
+                      <span>前半</span>
+                      <span>後半</span>
+                    </div>
+                  </div>
+                  <div class="l-score-detail-oppose">
+                    <div class="c-score-detail-oppose">
+                      <span>789</span>
+                      <span>0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-score-oppose">
+                  <div class="c-score-oppose">99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="l-game-info-oppose">
+          <div class="c-logo">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <p class="c-logo-text">ABABABABA</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="l-game-info-bottom">
+        <div class="l-last-datetime">
+          <span class="c-last-datetime-day">1.1</span>
+          <span class="c-last-datetime-week">SUN</span>
+          <span class="c-last-datetime-time">25:30</span>
+        </div>
+        <div class="c-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          スタジアム
+        </div>
+        <div class="l-button">
+          <button class="c-button-detail">試合詳細</button>
+          <a href="https://google.com" class="c-button-detail" target="_top">google(top)</a>
+          <a href="https://www.bing.com/" class="c-button-detail" target="_self">bing(self)</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
   
   <script>
   console.log(`_____:: ${document.referrer}`);
   </script>
+</body>
+</html>
+
+
+
+<body style="background-color: pink">
+  <h1>mock view</h1>
+  
 </body>

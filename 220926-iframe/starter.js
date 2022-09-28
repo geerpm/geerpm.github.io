@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 async function embedIfTargetExists() {
-  console.log(`-------    start vx`);
+  console.log(`-------    start`);
   const searchTargetAttr = "data-sample";
   const embedParamsAttrPrefix = "data-";
   const promises = Array.from(
@@ -50,27 +50,29 @@ async function embedIfTargetExists() {
 
     console.log(`-------    33`);
     const src = `${BASE_URL}?${targetEmbedType}`;
-    try {
-      const res = await fetch(src, {
-        method: "GET",
-        mode: "cors",
-        credentials: "include",
-        headers: {
-          ...data
-        }
-      });
-      const resData = await res.text();
-      console.log(resData);
-      const blob = new Blob([resData], { type: "text/html" });
-      console.log(`-------    444`);
-      iframe.src = URL.createObjectURL(blob);
-      // iframe.src = src;
-      targetEl.appendChild(iframe);
-    } catch (e) {
-      // TODO error
-      console.log(`-------    566`);
-      return;
-    }
+    iframe.src = src;
+    targetEl.appendChild(iframe);
+    // try {
+    //   const res = await fetch(src, {
+    //     method: "GET",
+    //     mode: "cors",
+    //     credentials: "include",
+    //     headers: {
+    //       ...data
+    //     }
+    //   });
+    //   const resData = await res.text();
+    //   console.log(resData);
+    //   const blob = new Blob([resData], { type: "text/html" });
+    //   console.log(`-------    444`);
+    //   iframe.src = URL.createObjectURL(blob);
+    //   // iframe.src = src;
+    //   targetEl.appendChild(iframe);
+    // } catch (e) {
+    //   // TODO error
+    //   console.log(`-------    566`);
+    //   return;
+    // }
   });
   await Promise.all(promises);
 }

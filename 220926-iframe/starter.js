@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 async function embedIfTargetExists() {
+  console.log(`-------    start`);
   const searchTargetAttr = "data-sample";
   const embedParamsAttrPrefix = "data-";
   const promises = Array.from(
@@ -20,6 +21,7 @@ async function embedIfTargetExists() {
     if (!targetEmbedType || targetEmbedType.startsWith("done-")) {
       return;
     }
+    console.log(`-------    111`);
     const data = Object.fromEntries(
       Array.from(targetEl.attributes)
         .filter((attr) => attr.nodeName.startsWith(embedParamsAttrPrefix))
@@ -28,6 +30,7 @@ async function embedIfTargetExists() {
           attr.value
         ])
     );
+    console.log(`-------    222`);
     targetEl.setAttribute(searchTargetAttr, `done-${targetEmbedType}`);
 
     // iframe構築
@@ -48,17 +51,21 @@ async function embedIfTargetExists() {
     iframe.src = "about:blank";
     targetEl.appendChild(iframe);
 
+    console.log(`-------    33`);
     const src = `${BASE_URL}?${targetEmbedType}`;
     try {
       const res = await fetch(src, {
         method: "GET",
+        mode: "no-cors",
         headers: {
           ...data
         }
       });
+      console.log(`-------    444`);
       iframe.src = URL.createObjectURL(await res.blob());
     } catch (e) {
       // TODO error
+      console.log(`-------    566`);
       return;
     }
   });

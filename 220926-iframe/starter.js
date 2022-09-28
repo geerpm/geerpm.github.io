@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 async function embedIfTargetExists() {
-  console.log(`-------    start`);
+  console.log(`-------    start vx`);
   const searchTargetAttr = "data-sample";
   const embedParamsAttrPrefix = "data-";
   const promises = Array.from(
@@ -54,6 +54,7 @@ async function embedIfTargetExists() {
       const res = await fetch(src, {
         method: "GET",
         mode: "cors",
+        credentials: "include",
         headers: {
           ...data
         }

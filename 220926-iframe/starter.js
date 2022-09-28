@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 async function embedIfTargetExists() {
-  console.log(`-------    start`);
+  console.log(`-------    start 10s`);
   const searchTargetAttr = "data-sample";
   const embedParamsAttrPrefix = "data-";
   const promises = Array.from(
@@ -21,7 +21,6 @@ async function embedIfTargetExists() {
     if (!targetEmbedType || targetEmbedType.startsWith("done-")) {
       return;
     }
-    console.log(`-------    111`);
     const data = Object.fromEntries(
       Array.from(targetEl.attributes)
         .filter((attr) => attr.nodeName.startsWith(embedParamsAttrPrefix))
@@ -30,7 +29,6 @@ async function embedIfTargetExists() {
           attr.value
         ])
     );
-    console.log(`-------    222`);
     targetEl.setAttribute(searchTargetAttr, `done-${targetEmbedType}`);
 
     // iframe構築
@@ -48,7 +46,6 @@ async function embedIfTargetExists() {
       "allow-same-origin"
     );
 
-    console.log(`-------    33`);
     const src = `${BASE_URL}?${targetEmbedType}`;
     iframe.src = src;
     targetEl.appendChild(iframe);

@@ -17,7 +17,7 @@ async function embedIfTargetExists() {
     document.querySelectorAll(`[${searchTargetAttr}]`)
   ).map(async (targetEl) => {
     const targetEmbedType = targetEl.getAttribute(searchTargetAttr);
-    if (!targetEmbedType || targetEmbedType in EmbedTypes) {
+    if (!targetEmbedType || targetEmbedType.startsWith("done-")) {
       return;
     }
     const data = Object.fromEntries(

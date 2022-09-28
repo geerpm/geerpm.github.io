@@ -58,9 +58,10 @@ async function embedIfTargetExists() {
           ...data
         }
       });
-      const resBlob = await res.blob();
+      const resData = await res.text();
+      const blob = new Blob([resData], { type: "text/html" });
       console.log(`-------    444`);
-      iframe.src = URL.createObjectURL(resBlob);
+      iframe.src = URL.createObjectURL(blob);
       // iframe.src = src;
       targetEl.appendChild(iframe);
     } catch (e) {

@@ -53,7 +53,7 @@ async function embedIfTargetExists() {
     try {
       const res = await fetch(src, {
         method: "GET",
-        mode: "no-cors",
+//         mode: "no-cors",
         headers: {
           ...data
         }

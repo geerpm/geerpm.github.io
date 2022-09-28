@@ -53,21 +53,22 @@ async function embedIfTargetExists() {
 
     console.log(`-------    33`);
     const src = `${BASE_URL}?${targetEmbedType}`;
-    try {
-      const res = await fetch(src, {
-        method: "GET",
-        mode: "no-cors",
-        headers: {
-          ...data
-        }
-      });
-      console.log(`-------    444`);
-      iframe.src = URL.createObjectURL(await res.blob());
-    } catch (e) {
-      // TODO error
-      console.log(`-------    566`);
-      return;
-    }
+    iframe.src = src;
+    // try {
+    //   const res = await fetch(src, {
+    //     method: "GET",
+    //     mode: "no-cors",
+    //     headers: {
+    //       ...data
+    //     }
+    //   });
+    //   console.log(`-------    444`);
+    //   iframe.src = URL.createObjectURL(await res.blob());
+    // } catch (e) {
+    //   // TODO error
+    //   console.log(`-------    566`);
+    //   return;
+    // }
   });
   await Promise.all(promises);
 }

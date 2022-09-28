@@ -48,12 +48,11 @@ async function embedIfTargetExists() {
       "allow-same-origin"
     );
 
-    iframe.src = "about:blank";
+    iframe.src = src;
     targetEl.appendChild(iframe);
 
     console.log(`-------    33`);
     const src = `${BASE_URL}?${targetEmbedType}`;
-    iframe.src = src;
     // try {
     //   const res = await fetch(src, {
     //     method: "GET",

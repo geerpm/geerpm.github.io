@@ -48,26 +48,25 @@ async function embedIfTargetExists() {
       "allow-same-origin"
     );
 
-    iframe.src = src;
-    targetEl.appendChild(iframe);
-
     console.log(`-------    33`);
     const src = `${BASE_URL}?${targetEmbedType}`;
-    // try {
-    //   const res = await fetch(src, {
-    //     method: "GET",
-    //     mode: "no-cors",
-    //     headers: {
-    //       ...data
-    //     }
-    //   });
-    //   console.log(`-------    444`);
-    //   iframe.src = URL.createObjectURL(await res.blob());
-    // } catch (e) {
-    //   // TODO error
-    //   console.log(`-------    566`);
-    //   return;
-    // }
+    try {
+      const res = await fetch(src, {
+        method: "GET",
+        mode: "no-cors",
+        headers: {
+          ...data
+        }
+      });
+      console.log(`-------    444`);
+      iframe.src = URL.createObjectURL(await res.blob());
+      // iframe.src = src;
+      targetEl.appendChild(iframe);
+    } catch (e) {
+      // TODO error
+      console.log(`-------    566`);
+      return;
+    }
   });
   await Promise.all(promises);
 }

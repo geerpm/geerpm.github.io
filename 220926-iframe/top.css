@@ -1,0 +1,641 @@
+@charset "utf-8";
+
+/*------------------------------------------------------
+ TOP Page
+-------------------------------------------------------*/
+
+/* レイアウト */
+
+.l-last-game {
+  text-align: center;
+  border: solid 1px #ccc; /* フチあり */
+  width: 100%;
+  height: auto;
+  padding: 2.4rem 0;
+}
+
+.l-last-game--dark {
+  text-align: center;
+  border: none;
+  background: #000;
+}
+
+
+.l-last-game-container,
+.l-next-game-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+
+.l-season {
+  text-align: center;
+  border-top: solid 1px #000;
+  border-bottom: solid 1px #000;
+  position: relative;
+  margin: 30px auto 0;
+  width:98%;
+}
+
+.l-season--dark {
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+}
+
+.l-season-overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -12px;
+}
+
+.l-season-overview  div {
+  min-width: 24%;
+}
+
+.l-season-overview div:not(:first-child) {
+  margin-left: -1px;
+}
+
+.l-score {
+  width: 100%;
+}
+
+.l-score-overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+  margin-top: -20px;
+}
+
+.l-score-own,
+.l-score-oppose {
+  width: 35%;
+}
+
+.l-score-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.l-score-detail-own,
+.l-score-detail-oppose {
+  width: 35%;
+}
+
+.l-score-status {
+  width: 30%;
+}
+
+.l-game-info {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  margin-top: -10px;
+}
+
+.l-game-info--next {
+  margin-top: -20px;
+}
+
+.l-game-info-container {
+  width:64%;
+  justify-content: center;
+}
+
+.l-game-info-own,
+.l-game-info-oppose {
+  width:18%;
+  justify-content:center;
+  position: relative;
+  top: 20px;
+}
+
+.l-last-datetime {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.l-next-datetime {
+  margin: -20px auto 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.l-stadium {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.l-button button {
+  margin: 10px 5px 0;
+}
+
+.l-game-info-bottom {
+  width: 55%;
+  margin: 0 auto;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 10px;
+
+}
+
+/* コンポーネント */
+
+.c-title {
+  font-size: calc(3.125rem + ((1vw - 5.21px) * 0.7364));
+  min-height: 0vw;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.c-title--dark {
+  color: #fff;
+}
+
+.c-league {
+  font-size: calc(1.875rem + ((1vw - 5.21px) * 0.5891));
+  min-height: 0vw;
+  line-height: 1.3;
+  font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.c-league--dark {
+  color: #fff;
+}
+
+.c-Round {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  background: #000;
+  color: #fff;
+  border:solid 1px #000;
+}
+
+.c-Round--dark {
+  background: #fff;
+  color: #000;
+  border:solid 1px #000;
+}
+
+.c-field {
+  font-size: 1.2rem;
+  line-height: 1.7;
+ }
+
+ .c-field--visiter {
+  background: #1C2744;
+  color: #fff;
+  border:solid 1px #000;
+ }
+
+.c-field--host {
+  background: #F8D200;
+  border:solid 1px #000;
+ }
+
+.c-score-own,
+.c-score-oppose {
+  font-size: calc(6rem + ((1vw - 5.21px) * 2.0619));
+  min-height: 0vw;
+  line-height: 1.3;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c-score-ownn--dark,
+.c-score-oppose--dark {
+  color: #fff;
+}
+
+.c-score-detail-own,
+.c-score-detail-oppose {
+  font-size: calc(2rem + ((1vw - 5.21px) * 1.1782));
+  min-height: 0vw;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.c-score-status {
+  font-size: calc(1.625rem + ((1vw - 5.21px) * 0.5891));
+  min-height: 0vw;
+  line-height: 1.7;
+  font-weight: bold;
+  display: block;
+  white-space: nowrap;
+}
+
+.c-score-detail-own--dark,
+.c-score-status--dark,
+.c-score-detail-oppose--dark {
+  color: #fff;
+}
+
+.c-score-canceled {
+  font-size: calc(2.125rem + ((1vw - 5.21px) * 0.8837));
+  min-height: 0vw;
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+
+.l-score-detail span {
+  display: block;
+}
+
+.c-stadium {
+  font-size: calc(1rem + ((1vw - 5.21px) * 1.1782));
+  min-height: 0vw;
+  line-height: 1.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+.c-stadium--dark {
+  color: #fff;
+}
+
+.c-stadium--dark i {
+  color: #F8D200;
+}
+
+.c-logo-text--dark {
+  color: #fff;
+}
+
+.c-logo img {
+  width:90%;
+  height: auto;
+}
+
+.c-logo-text {
+  font-size: calc(1rem + ((1vw - 5.21px) * 1.1782));
+  line-height: 1.7;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.c-last-datetime-day {
+  font-size: calc(2.5rem + ((1vw - 5.21px) * 1.1782));
+  line-height: 1;
+}
+
+.c-last-datetime-time {
+  font-size: calc(2.5rem + ((1vw - 5.21px) * 1.1782));
+  line-height: 1;
+  padding-left: 5px;
+}
+
+.c-last-datetime-week {
+  font-size: calc(1.2rem + ((1vw - 5.21px) * 1.7673));
+  line-height: 1;
+}
+
+.c-last-datetime-day--dark,
+.c-last-datetime-time--dark,
+.c-last-datetime-week--dark {
+  color: #fff;
+}
+
+.c-next-datetime-day {
+  font-size: calc(3.6rem + ((1vw - 5.21px) * 1.7673));
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+.c-next-datetime-week {
+  font-size: calc(2rem + ((1vw - 5.21px) * 1.7673));
+  font-weight: bold;
+  line-height: 1.7;
+  padding-left: 10px;
+}
+
+.c-next-datetime-time {
+  font-size: calc(3.6rem + ((1vw - 5.21px) * 1.7673));
+  font-weight: bold;
+  line-height: 1.7;
+  padding-left: 10px;
+}
+
+.c-next-datetime-timeundecided {
+  font-size: calc(2rem + ((1vw - 5.21px) * 1.7673));
+  font-weight: bold;
+  line-height: 1.7;
+  padding-left: 10px;
+}
+
+.c-next-datetime-day--dark,
+.c-next-datetime-time--dark,
+.c-next-datetime-week--dark,
+.c-next-datetime-timeundecided--dark {
+  color: #fff;
+}
+
+.c-button-detail,
+.c-button-ticket,
+.c-button-event {
+  background: #1C2744;
+  color: #fff;
+  border: #1C2744 solid 2px;
+  appearance: none;
+  padding: 5px;
+  min-width: 135px;
+  cursor: pointer;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.c-button-detail:hover,
+.c-button-ticket:hover,
+.c-button-event:hover {
+  background: #fff;
+  color: #1C2744;
+  border: #1C2744 solid 2px;
+}
+
+.c-button-detail:disabled,
+.c-button-ticket:disabled,
+.c-button-event:disabled {
+  opacity: 40%;
+}
+
+.c-button-detail--dark,
+.c-button-ticket--dark
+.c-button-event--dark {
+  background: #F8D200;
+  color: #1C2744;
+  border: #F8D200 solid 2px;
+}
+
+.c-button-detail--dark:hover,
+.c-button-ticket--dark:hover,
+.c-button-event--dark:hover {
+  background: none;
+  color: #fff;
+  border: #F8D200 solid 2px;
+}
+
+/* ここから表示確認用スタイル あとで削除 */
+.c-button-detail--disabled {
+  opacity: 40%;
+  cursor:auto;
+}
+.c-button-detail--disabled:hover {
+  opacity: 40%;
+  background: #1C2744;
+  color: #fff;
+  border: #1C2744 solid 2px;
+}
+/* ここまで表示確認用スタイル あとで削除 */
+
+
+/*------ メディアクエリ --------*/
+/* デバイス幅が1200px以上 */
+@media screen and (min-width: 1200px) {
+.c-title--h3 {
+    font-size: 2.8rem;
+}
+.c-title--h3 {
+    font-size: 2.4rem;
+}
+.c-text {
+  font-size: 1.6rem;
+}
+}
+
+
+/* デバイス幅が520px以下 */
+
+@media screen and (max-width: 520px) {
+
+/* レイアウト */
+  .l-game-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border-bottom: #000 solid 1px;
+  }
+
+  .l-game-info--dark {
+    border-bottom:#fff solid 1px;
+  }
+
+  .l-season-overview div {
+    min-width: 25%;
+  }
+  
+  .l-score-overview {
+    margin-top: -10px;
+    min-height: auto;
+  }
+
+  .l-game-info-container {
+    width:100%;
+    order: 1;
+  }
+  
+  .l-game-info-own {
+    width:40%;
+    order: 2;
+    position: relative;
+    top: 0;
+  }
+
+  .l-game-info-oppose {
+    width:40%;
+    order: 3;
+    position: relative;
+    top: 0;
+  }
+
+  .l-season {
+    text-align: center;
+    border-bottom: none;
+    width:100%;
+  }
+
+  .l-last-datetime {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .l-game-info {
+    padding-bottom: 16px;
+  }
+
+  .l-score-detail span {
+    display: block;
+    white-space: nowrap;
+}
+
+/* コンポーネント */
+
+  .c-title {
+    font-size: 3.2rem;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  .c-league {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-top: 8px;
+  }
+
+  .c-score-own,
+  .c-score-oppose {
+    font-size: calc(5.625rem + ((1vw - 5.21px) * 1.4728));
+    min-height: 0vw;
+    line-height: 1.3;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .c-score-detail-own,
+  .c-score-detail-oppose {
+    font-size: calc(2rem + ((1vw - 5.21px) * 1.1782));
+    min-height: 0vw;
+    line-height: 1.3;
+    font-weight: bold;
+  }
+
+  .c-score-status {
+    font-size: calc(1.5rem + ((1vw - 5.21px) * 1.1782));
+    min-height: 0vw;
+    line-height: 2;
+    font-weight: bold;
+  }
+
+  .l-game-info-bottom {
+    width: auto;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+
+  .c-logo img {
+    width:100%;
+    height: auto;
+  }
+
+  .c-last-datetime-day {
+    font-size: 2.4rem;
+    line-height: 1;
+  }
+  
+  .c-last-datetime-time {
+    font-size: 2.4rem;
+    line-height: 1;
+    padding-left: 5px;
+  }
+  
+  .c-last-datetime-week {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .c-score-canceled {
+    font-size: 3rem;
+    min-height: 0vw;
+    line-height: 2.4;
+    font-weight: bold;
+}
+
+  .c-button-detail,
+  .c-button-ticket,
+  .c-button-event {
+    padding: 5px;
+    min-width: 40%;
+  }
+
+  .l-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .c-button-ticket {
+    order: 1;
+    width: 40%;
+  }
+
+  .c-button-event {
+    order: 2;
+    width: 40%;
+  }
+
+  .c-button-detail {
+    order: 3;
+  }
+
+  .l-next-datetime {
+    padding-top: 16px;
+  }
+
+
+  .c-next-datetime-day {
+    font-size: calc(4rem + ((1vw - 5.21px) * 1.1782));
+    min-height: 0vw;
+  }
+  
+  .c-next-datetime-week {
+    font-size: calc(2.5rem + ((1vw - 5.21px) * 1.1782));
+    min-height: 0vw;
+  }
+  
+  .c-next-datetime-time {
+    font-size: calc(3.625rem + ((1vw - 5.21px) * 0.8837));
+    min-height: 0vw;
+  }
+  
+  .c-next-datetime-timeundecided {
+    font-size: calc(24px + ((1vw - 5.21px) * 1.7673));
+    min-height: 0vw;
+  }
+
+  .c-logo-text {
+    font-size: calc(1.5rem + ((1vw - 5.21px) * 1.1782));
+    min-height: 0vw;
+    line-height: 1.3;
+  }
+
+  .c-stadium {
+    font-size: calc(1.5rem + ((1vw - 5.21px) * 1.1782));
+    min-height: 0vw;
+    line-height: 1.7;
+    margin-top: 4px;
+  }
+  
+  .l-game-info--next {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+

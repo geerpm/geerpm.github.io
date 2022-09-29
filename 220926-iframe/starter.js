@@ -1,5 +1,3 @@
-const { type } = require("os");
-
 const BASE_URL = `https://geerpm.github.io/220926-iframe/`;
 
 (() => {

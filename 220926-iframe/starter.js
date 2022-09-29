@@ -91,7 +91,7 @@ function insertSizingCss(doc) {
     [data-sample] {
       height: calc(100vw / 16 * 29);
     }
-    [data-sample=list] {
+    [data-sample="list"] {
       height: calc(100vw * 9.16);
     }
   }`);
@@ -99,7 +99,7 @@ function insertSizingCss(doc) {
     [data-sample] {
       height: calc(100vw / 15 * 11);
     }
-    [data-sample=list] {
+    [data-sample="list"] {
       height: calc(100vw * 2.085);
     }
   }`);
@@ -107,7 +107,7 @@ function insertSizingCss(doc) {
     [data-sample] {
       height: calc(100vw / 100 * 38);
     }
-    [data-sample=list] {
+    [data-sample="list"] {
       height: calc(100vw * 1.29);
     }
   }`);

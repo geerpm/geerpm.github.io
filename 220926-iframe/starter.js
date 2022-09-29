@@ -52,7 +52,7 @@ async function embedIfTargetExists(doc) {
     const filename = (() => {
       if (type === "list.html") return type;
       return "index.html";
-    })(type);
+    })(targetEmbedType);
     const src = `${BASE_URL}${filename}`;
     iframe.src = src;
     targetEl.appendChild(iframe);

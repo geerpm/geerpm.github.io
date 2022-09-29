@@ -62,7 +62,6 @@ async function embedIfTargetExists() {
     //   const resData = await res.text();
     //   console.log(resData);
     //   const blob = new Blob([resData], { type: "text/html" });
-    //   console.log(`-------    444`);
     //   iframe.src = URL.createObjectURL(blob);
     //   // iframe.src = src;
     //   targetEl.appendChild(iframe);

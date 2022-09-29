@@ -50,7 +50,7 @@ async function embedIfTargetExists(doc) {
     );
 
     const filename = ((type) => {
-      if (type === "list.html") return type;
+      if (type === "list") return "list.html";
       return "index.html";
     })(targetEmbedType);
     const src = `${BASE_URL}${filename}`;
@@ -91,15 +91,24 @@ function insertSizingCss(doc) {
     [data-sample] {
       height: calc(100vw / 16 * 29);
     }
+    [data-sample=list] {
+      height: calc(100vw * 9.16);
+    }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 577px) and (max-width: 991px) {
     [data-sample] {
       height: calc(100vw / 15 * 11);
     }
+    [data-sample=list] {
+      height: calc(100vw * 2.085);
+    }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 992px) {
     [data-sample] {
-      height: calc(100vw / 3 * 2);
+      height: calc(100vw / 100 * 38);
+    }
+    [data-sample=list] {
+      height: calc(100vw * 1.29);
     }
   }`);
 }

@@ -49,7 +49,7 @@ async function embedIfTargetExists(doc) {
       "allow-same-origin"
     );
 
-    const filename = (() => {
+    const filename = ((type) => {
       if (type === "list.html") return type;
       return "index.html";
     })(targetEmbedType);

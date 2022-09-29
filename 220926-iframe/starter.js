@@ -100,5 +100,19 @@ function insertSizingCss(doc) {
     }
   }
   `;
-  styleSheet.insertRule(rule);
+  styleSheet.insertRule(`@media screen and (max-width: 576px) {
+    [data-spolive] {
+      height: calc(100vw / 16 * 29);
+    }
+  }`);
+  styleSheet.insertRule(`@media screen and (min-width: 577px) {
+    [data-spolive] {
+      height: calc(100vw / 15 * 11);
+    }
+  }`);
+  styleSheet.insertRule(`@media screen and (min-width: 992px) {
+    [data-spolive] {
+      height: calc(100vw / 3 * 2);
+    }
+  }`);
 }

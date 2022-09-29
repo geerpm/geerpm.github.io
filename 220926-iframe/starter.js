@@ -1,3 +1,5 @@
+const { type } = require("os");
+
 const BASE_URL = `https://geerpm.github.io/220926-iframe/`;
 
 (() => {
@@ -49,7 +51,11 @@ async function embedIfTargetExists(doc) {
       "allow-same-origin"
     );
 
-    const src = `${BASE_URL}?${targetEmbedType}`;
+    const filename = (() => {
+      if (type === "list.html") return type;
+      return "index.html";
+    })(type);
+    const src = `${BASE_URL}${filename}`;
     iframe.src = src;
     targetEl.appendChild(iframe);
     // try {

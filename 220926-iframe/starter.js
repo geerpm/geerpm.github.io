@@ -84,19 +84,16 @@ function insertSizingCss(doc) {
   const styleSheet = style.sheet;
 
   const rule = `
-  // モバイル
   @media screen and (max-width: 576px) {
     [data-spolive] {
       height: calc(100vw / 16 * 29);
     }
   }
-  // タブレット
   @media screen and (min-width: 577px) {
     [data-spolive] {
       height: calc(100vw / 15 * 11);
     }
   }
-  // PC
   @media screen and (min-width: 992px) {
     [data-spolive] {
       height: calc(100vw / 3 * 2);

@@ -83,35 +83,18 @@ function insertSizingCss(doc) {
   doc.head.appendChild(style);
   const styleSheet = style.sheet;
 
-  const rule = `
-  @media screen and (max-width: 576px) {
-    [data-spolive] {
-      height: calc(100vw / 16 * 29);
-    }
-  }
-  @media screen and (min-width: 577px) {
-    [data-spolive] {
-      height: calc(100vw / 15 * 11);
-    }
-  }
-  @media screen and (min-width: 992px) {
-    [data-spolive] {
-      height: calc(100vw / 3 * 2);
-    }
-  }
-  `;
   styleSheet.insertRule(`@media screen and (max-width: 576px) {
-    [data-spolive] {
+    [data-sample] {
       height: calc(100vw / 16 * 29);
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 577px) {
-    [data-spolive] {
+    [data-sample] {
       height: calc(100vw / 15 * 11);
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 992px) {
-    [data-spolive] {
+    [data-sample] {
       height: calc(100vw / 3 * 2);
     }
   }`);

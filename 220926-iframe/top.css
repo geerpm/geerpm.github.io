@@ -225,14 +225,14 @@
 
 .c-score-detail-own,
 .c-score-detail-oppose {
-  font-size: calc(2rem + ((1vw - 5.21px) * 1.1782));
+  font-size: calc(1.8rem + ((1vw - 5.21px) * 1.1782));
   min-height: 0vw;
   line-height: 1.2;
   font-weight: bold;
 }
 
 .c-score-status {
-  font-size: calc(1.625rem + ((1vw - 5.21px) * 0.5891));
+  font-size: calc(1.4rem + ((1vw - 5.21px) * 0.5891));
   min-height: 0vw;
   line-height: 1.7;
   font-weight: bold;
@@ -411,15 +411,17 @@
 /*------ メディアクエリ --------*/
 /* デバイス幅が1200px以上 */
 @media screen and (min-width: 1200px) {
-.c-title--h3 {
-    font-size: 2.8rem;
-}
-.c-title--h3 {
-    font-size: 2.4rem;
-}
-.c-text {
-  font-size: 1.6rem;
-}
+  .c-league {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+
+  .c-logo-text {
+    font-size: calc(0.85rem + ((1vw - 5.21px) * 1.1782));
+  }
+
 }
 
 

@@ -78,6 +78,7 @@ async function embedIfTargetExists(doc) {
 }
 
 function insertSizingCss(doc) {
+  console.log(`-------    add style 10s`);
   const style = doc.createElement("style");
   doc.head.appendChild(style);
   const styleSheet = style.sheet;

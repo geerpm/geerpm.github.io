@@ -1,0 +1,587 @@
+@charset "utf-8";
+
+/*------------------------------------------------------
+ List
+-------------------------------------------------------*/
+
+/* レイアウト */
+
+.l-game-list {
+  background: #fff;
+  border: solid 1px #ccc; /* フチあり */
+  width: 100%;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.l-game-list--dark {
+  background: #000;
+  border: none;
+}
+
+.l-season-overview {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.l-season-overview  div {
+  min-width: 80px;
+}
+
+.l-game-info {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 16px;
+  width: 100%;
+}
+
+.l-game-info-overview {
+  flex-basis: max(25vw, 250px);
+  align-items: center;
+  margin-right: 10px;
+}
+
+.l-game-info-oppose {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-basis:  auto;
+  text-align: left;
+  width: 100%;
+}
+
+.l-game-info-detail {
+  flex-basis: max(25vw, 200px);
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: auto;
+}
+
+.l-game-info-canceled {
+  flex-basis: max(25vw, 200px);
+  text-align: center;
+}
+
+.l-button {
+  width: 100%;
+}
+
+.l-button button {
+  margin-bottom: 5px;
+}
+
+.l-button button:last-child {
+  margin-bottom: 0;
+}
+
+.l-game-datetime {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+
+.l-logo {
+  width: max(10vw, 90px);
+  text-align: center;
+}
+
+/* コンポーネント */
+
+.c-league-title {
+  font-size: calc(1.875rem + ((1vw - 5.21px) * 0.7364));
+  line-height: 1.7;
+  background: #1F2A44;
+  color: #fff;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+.c-Round {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.c-Round--dark {
+  background: #fff;
+  color: #000;
+  border:none;
+}
+
+.c-field {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+ }
+
+ .c-field--visiter {
+  background: #1C2744;
+  color: #fff;
+ }
+
+.c-field--host {
+  background: #F8D200;
+ }
+
+ .c-game-datetime-day {
+  font-size: calc(3.4375rem + ((1vw - 5.21px) * 0.7364));
+  min-height: 0vw;
+  line-height: 1.7;
+  white-space:nowrap;
+}
+
+.c-game-datetime-time {
+  font-size: calc(2.1875rem + ((1vw - 5.21px) * 1.4728));
+  min-height: 0vw;
+  line-height: 1.7;
+  padding-left: 5px;
+  white-space:nowrap;
+}
+
+.c-game-datetime-week {
+  font-size: calc(1.25rem + ((1vw - 5.21px) * 1.4728));
+  min-height: 0vw;
+  line-height: 1.7;
+  white-space:nowrap;
+  padding-left: 5px;
+}
+
+.c-game-datetime-day--dark,
+.c-game-datetime-time--dark,
+.c-game-datetime-week--dark {
+  color: #fff;
+}
+
+.c-stadium {
+  font-size: calc(1rem + ((1vw - 5.21px) * 0.5891));
+  min-height: 0vw;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.c-stadium--dark {
+  color: #fff;
+}
+
+.c-stadium--dark i {
+  color: #F8D200;
+}
+
+img.c-logo {
+  width: 90%;
+}
+
+.c-logo-text {
+  font-size: calc(2rem + ((1vw - 5.21px) * 1.1782));
+  min-height: 0vw;
+  line-height: 1.5;
+  font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  width:calc(100% - 100px);
+}
+
+.c-logo-text--dark {
+  color: #fff;
+}
+
+.c-button-detail,
+.c-button-ticket,
+.c-button-event {
+  font-size: calc(1rem + ((1vw - 5.21px) * 0.5891));
+  min-height: 0vw;
+  background: #1C2744;
+  color: #fff;
+  border: #1C2744 solid 2px;
+  appearance: none;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.c-button-detail:hover,
+.c-button-ticket:hover,
+.c-button-event:hover {
+  background: #fff;
+  color: #1C2744;
+  border: #1C2744 solid 2px;
+}
+
+.c-button-detail:disabled,
+.c-button-ticket:disabled,
+.c-button-event:disabled {
+  opacity: 40%;
+}
+
+.c-button-detail--dark,
+.c-button-ticket--dark,
+.c-button-event--dark {
+  background: #F8D200;
+  color: #1C2744;
+  border: #F8D200 solid 2px;
+}
+
+.c-button-detail--dark:hover,
+.c-button-ticket--dark:hover,
+.c-button-event--dark:hover {
+  background: none;
+  color: #fff;
+  border: #F8D200 solid 2px;
+}
+
+/* ここから表示確認用スタイル あとで削除 */
+.c-button-detail--disabled {
+  opacity: 40%;
+  cursor:auto;
+}
+.c-button-detail--disabled:hover {
+  opacity: 40%;
+  background: #1C2744;
+  color: #fff;
+  border: #1C2744 solid 2px;
+}
+
+.c-button-detail--dark--disabled {
+  opacity: 40%;
+  cursor:auto;
+  background: #F8D200;
+  border: none;
+  color: #000;
+}
+.c-button-detail--dark--disabled:hover {
+  opacity: 40%;
+  background: #F8D200;
+  border: none;
+  color: #000;
+}
+/* ここまで表示確認用スタイル あとで削除 */
+
+.c-game-result {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.c-game-result-own,
+.c-game-result-oppose {
+  font-size: calc(4rem + ((1vw - 7.6px)*(10/4.4)));
+  font-weight: bold;
+  line-height: 1;
+}
+
+.c-game-result-own {
+  color: #1C2744;
+}
+
+.c-game-result-own--dark {
+  color: #F8D200;
+}
+
+.c-game-result-hyphen {
+  font-size: calc(3.2rem + ((1vw - 7.6px)*(10/4.4)));
+  font-weight: bold;
+  line-height: 1;
+}
+
+.c-game-result-oppose--dark,
+.c-game-result-hyphen--dark {
+  color: #fff;
+}
+
+.c-game-win {
+  font-size: calc(1.875rem + ((1vw - 5.21px) * 1.4728));
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding: 0 30px;
+  color: #1C2744;
+}
+
+.c-game-win:before,
+.c-game-win:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background: #1C2744;
+}
+
+.c-game-win:before {
+  left:0;
+}
+.c-game-win:after {
+  right: 0;
+}
+
+.c-game-canceled {
+  font-size: calc(1.75rem + ((1vw - 5.21px) * 1.1782));
+  min-height: 0vw;
+  font-weight: bold;
+  line-height: 2.0rem;
+}
+
+.c-game-win--dark{
+  color: #F8D200;
+}
+
+.c-game-win--dark:before,
+.c-game-win--dark:after {
+  background: #F8D200;
+}
+
+
+
+/* デバイス幅が520px以下 */
+@media screen and (max-width: 520px) {
+
+  /* レイアウト */
+
+  .l-game-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 32px 24px;
+    width: 100%;
+  }
+
+  .l-season-overview {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    position: relative;
+    margin-top: -10px;
+  }
+  
+
+  .l-game-info-overview {
+    border-top: #000 solid 1px;
+    flex-basis: auto;
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .l-game-info-overview--dark {
+    border-top: #fff solid 1px;
+  }
+
+
+  .l-game-datetime{
+    width: 100%;
+    text-align: center;
+  }
+
+  .l-stadium {
+    width: 100%;
+    text-align: center; 
+  }
+  
+  .l-game-info-detail,
+  .l-game-info-canceled {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .l-game-datetime {
+    justify-content: center;
+}
+
+  .l-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .l-button button {
+    width: 45%;
+    margin: 14px 2%;
+    margin-bottom: 0;
+  }
+
+  .l-game-info-detail {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+
+.l-game-info-oppose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: auto;
+    text-align: center;
+    width: auto;
+  }
+
+  .l-logo {
+    flex-basis: 80px;
+  }
+
+  /* コンポーネント */
+  
+
+  .c-logo-text {
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: left;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+
+  .c-league-title {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    background: #1F2A44;
+    color: #fff;
+    padding: 8px;
+    margin-bottom: 24px;
+  }
+
+  .c-game-datetime-day {
+    font-size: 4rem;
+    line-height: 1.7;
+  }
+
+  .c-game-datetime-week {
+    font-size: 2rem;
+    line-height: 1.7;
+  }
+
+  .c-game-datetime-time {
+    font-size: 3.4rem;
+    line-height: 1.7;
+  }
+
+  .c-stadium {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+
+  .c-game-win {
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 0 30px;
+    color: #1C2744;
+  }
+  
+  .c-game-win:before,
+  .c-game-win:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 2.4rem;
+    height: 2px;
+    background: #1C2744;
+  }
+  
+  .c-game-win:before {
+    left:0;
+  }
+  .c-game-win:after {
+    right: 0;
+  }
+
+  .c-game-win--dark {
+    color: #F8D200;
+  }
+  .c-game-win--dark:before,
+  .c-game-win--dark:after {
+    background: #F8D200;
+  }
+
+  .c-button-container {
+    border-top: solid 1px #000;
+  }
+
+  .c-button-container--dark {
+    border-top: solid 1px #fff;
+  }
+  
+  .c-button-detail,
+  .c-button-ticket,
+  .c-button-event {
+    font-size: 1.4rem;
+    min-height: 0vw;
+    background: #1C2744;
+    color: #fff;
+    border: #1C2744 solid 2px;
+    appearance: none;
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .c-game-result-own,
+  .c-game-result-oppose {
+    font-size: 4.2rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .c-game-result-hyphen {
+    font-size: 3.8rem;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0 5px;
+  }
+
+  .c-game-canceled {
+    border-bottom: solid 1px #000;
+    padding-bottom: 24px;
+    font-size: 2rem;
+  }
+
+  .c-game-canceled--dark {
+    border-top: solid 1px #fff;
+  }
+
+  .c-button-detail--dark,
+  .c-button-ticket--dark,
+  .c-button-event--dark {
+    background: #F8D200;
+    color: #000;
+    border: none;
+  }
+ 
+  /* ここから表示確認用スタイル あとで削除 */
+  .c-button-detail--dark--disabled {
+    opacity: 40%;
+    background: #F8D200;
+    border: none;
+    color: #000;
+  }
+  /* ここまで表示確認用スタイル あとで削除 */
+
+}
+
+

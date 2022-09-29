@@ -92,7 +92,7 @@ function insertSizingCss(doc) {
       height: calc(100vw / 16 * 29);
     }
   }`);
-  styleSheet.insertRule(`@media screen and (min-width: 577px) {
+  styleSheet.insertRule(`@media screen and (min-width: 577px) and (max-width: 991px) {
     [data-sample] {
       height: calc(100vw / 15 * 11);
     }

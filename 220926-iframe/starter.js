@@ -88,26 +88,26 @@ function insertSizingCss(doc) {
   const styleSheet = style.sheet;
 
   styleSheet.insertRule(`@media screen and (max-width: 576px) {
-    [data-sample="index"] {
+    [data-sample="done-index"] {
       height: calc(100vw / 16 * 29);
     }
-    [data-sample="list"] {
+    [data-sample="done-list"] {
       height: calc(100vw * 9.16);
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 577px) and (max-width: 991px) {
-    [data-sample="index"] {
+    [data-sample="done-index"] {
       height: calc(100vw / 15 * 11);
     }
-    [data-sample="list"] {
+    [data-sample="done-list"] {
       height: calc(100vw * 2.085);
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 992px) {
-    [data-sample="index"] {
+    [data-sample="done-index"] {
       height: calc(100vw / 100 * 38);
     }
-    [data-sample="list"] {
+    [data-sample="done-list"] {
       height: calc(100vw * 1.29);
     }
   }`);

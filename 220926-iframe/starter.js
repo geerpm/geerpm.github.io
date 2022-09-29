@@ -2,20 +2,22 @@ const BASE_URL = `https://geerpm.github.io/220926-iframe/`;
 
 (() => {
   // 即時
-  embedIfTargetExists();
+  embedIfTargetExists(document);
+  // 一度だけ実行
+  insertSizingCss(document);
 })();
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // loaded
-  setTimeout(() => embedIfTargetExists(), 1000);
+  setTimeout(() => embedIfTargetExists(document), 1000);
 });
 
-async function embedIfTargetExists() {
+async function embedIfTargetExists(doc) {
   console.log(`-------    start 10s`);
   const searchTargetAttr = "data-sample";
   const embedParamsAttrPrefix = "data-";
   const promises = Array.from(
-    document.querySelectorAll(`[${searchTargetAttr}]`)
+    doc.querySelectorAll(`[${searchTargetAttr}]`)
   ).map(async (targetEl) => {
     console.log(targetEl);
     const targetEmbedType = targetEl.getAttribute(searchTargetAttr);
@@ -33,7 +35,7 @@ async function embedIfTargetExists() {
     targetEl.setAttribute(searchTargetAttr, `done-${targetEmbedType}`);
 
     // iframe構築
-    const iframe = document.createElement("iframe");
+    const iframe = doc.createElement("iframe");
     iframe.style.cssText = `
     position: relative;
     height: 100%;
@@ -62,6 +64,7 @@ async function embedIfTargetExists() {
     //   const resData = await res.text();
     //   console.log(resData);
     //   const blob = new Blob([resData], { type: "text/html" });
+    //   console.log(`-------    444`);
     //   iframe.src = URL.createObjectURL(blob);
     //   // iframe.src = src;
     //   targetEl.appendChild(iframe);
@@ -72,4 +75,32 @@ async function embedIfTargetExists() {
     // }
   });
   await Promise.all(promises);
+}
+
+function insertSizingCss(doc) {
+  const style = doc.createElement("style");
+  doc.head.appendChild(style);
+  const styleSheet = style.sheet;
+
+  const rule = `
+  // モバイル
+  @media screen and (max-width: 576px) {
+    [data-spolive] {
+      height: calc(100vw / 16 * 29);
+    }
+  }
+  // タブレット
+  @media screen and (min-width: 577px) {
+    [data-spolive] {
+      height: calc(100vw / 15 * 11);
+    }
+  }
+  // PC
+  @media screen and (min-width: 992px) {
+    [data-spolive] {
+      height: calc(100vw / 3 * 2);
+    }
+  }
+  `;
+  styleSheet.insertRule(rule);
 }

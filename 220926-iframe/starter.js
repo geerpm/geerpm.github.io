@@ -88,7 +88,7 @@ function insertSizingCss(doc) {
   const styleSheet = style.sheet;
 
   styleSheet.insertRule(`@media screen and (max-width: 576px) {
-    [data-sample] {
+    [data-sample="index"] {
       height: calc(100vw / 16 * 29);
     }
     [data-sample="list"] {
@@ -96,7 +96,7 @@ function insertSizingCss(doc) {
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 577px) and (max-width: 991px) {
-    [data-sample] {
+    [data-sample="index"] {
       height: calc(100vw / 15 * 11);
     }
     [data-sample="list"] {
@@ -104,7 +104,7 @@ function insertSizingCss(doc) {
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width: 992px) {
-    [data-sample] {
+    [data-sample="index"] {
       height: calc(100vw / 100 * 38);
     }
     [data-sample="list"] {

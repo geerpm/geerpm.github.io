@@ -100,7 +100,7 @@ function insertSizingCss(doc) {
       height: 560px;
     }
     [data-sample="done-list"] {
-      height: calc(100vw * 9.16);
+      height: 3250px;
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width:521px) and ( max-width:849px) {
@@ -108,7 +108,7 @@ function insertSizingCss(doc) {
       height: 380px;
     }
     [data-sample="done-list"] {
-      height: calc(100vw * 2.085);
+      height: 1360px;
     }
   }`);
   styleSheet.insertRule(`@media screen and (min-width:850px) {
@@ -117,7 +117,8 @@ function insertSizingCss(doc) {
       max-width: 1200px;
     }
     [data-sample="done-list"] {
-      height: calc(100vw * 1.29);
+      height: 1700px;
+      max-width: 1200px;
     }
   }`);
 }
